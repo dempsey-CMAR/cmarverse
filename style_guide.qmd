@@ -1,0 +1,13 @@
+---
+title: "style_guide"
+editor: visual
+---
+
+cmarverse package developers should strive to meet most guidelines in [The tidyverse style guide](https://style.tidyverse.org/) by Hadley Wickham.
+
+It is not necessary to remember every detail of this guide as you write code. Tools like the [styler package](https://github.com/r-lib/styler) (e.g., `styler::style_pkg()`) can be used periodically to automatically reformat code according to the guidelines.
+
+To help with collaboration, we recommend trying to follow the guide when possible. Key guidelines are listed below. 
+
+(Some text/examples are verbatim?) 
+

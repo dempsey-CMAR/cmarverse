@@ -5,8 +5,9 @@ website:
   title: "cmarverse"
   navbar:
     left:
-      - href: style_guide.qmd
-        text: Home
+      - href: cmarverse.qmd
+        text: Overview
+      - style_guide.qmd
 
 format:
   html:

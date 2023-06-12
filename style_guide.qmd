@@ -1,13 +1,120 @@
 ---
-title: "style_guide"
+title: "Style Guide"
 editor: visual
 ---
 
-cmarverse package developers should strive to meet most guidelines in [The tidyverse style guide](https://style.tidyverse.org/) by Hadley Wickham.
+cmarverse package developers should strive to meet most guidelines in [the tidyverse style guide](https://style.tidyverse.org/) by Hadley Wickham.
 
 It is not necessary to remember every detail of this guide as you write code. Tools like the [styler package](https://github.com/r-lib/styler) (e.g., `styler::style_pkg()`) can be used periodically to automatically reformat code according to the guidelines.
 
-To help with collaboration, we recommend trying to follow the guide when possible. Key guidelines are listed below. 
+However, to help with collaboration, we recommend trying to follow the guide when possible. Key guidelines are listed below (some wording has been modified).
 
-(Some text/examples are verbatim?) 
+
+(Some additions specific to the cmarverse in [blue]{style="color: #15ace4;"})
+(SEe the original guide for examples)
+
+# Naming
+
+## Package names
+
+This sub-section was modified from [R Packages (2e)](https://r-pkgs.org/workflow101.html#name-your-package) by Hadley Wickham.
+
+Formal requirements for package names:
+
+-   Can only consist of letters, numbers, and periods.
+-   Must start with a letter.
+-   Cannot end with a period.
+
+Note that hyphens and underscores are not permitted, and periods are not recommended.
+
+Best practices:
+
+-   Don't pick a name that is already on CRAN or Bioconductor.
+-   Avoid using both upper and lower case letters.
+-   Use a name that is easy to pronounce.
+-   Use a name that is easy to type[^1].
+
+[^1]: https://yihui.org/en/2017/12/typing-names/
+
+The [available](https://cran.r-project.org/web/packages/available/index.html) package helps to evaulate potential names.
+
+## File names
+
+- Files names should be all lower case.
+
+- If there is only one function in the file, the file should have the same name as the function.
+
+- If there are multiple functions in the file, give it a concise, meaningful name.
+
+- [Words should be separated by an underscore (no spaces).]{style="color: #15ace4;"}
+
+## Object names
+
+- Variable and function names should only use lowercase letters, numbers, and underscores.
+
+- Use an underscore (_) to separate words (this is called snake case).
+
+- Variable names should be nouns and function names should be verbs.
+
+- [Function names should have a prefix indicating the package they belong to, e.g., `adcp_export_deployment_info` is from the adcp package, and `ss_download_data` is from the sensorstrings package.]{style="color: #15ace4;"}
+
+# Other Syntax
+
+## Assignment
+
+- Use `<-`, not `=`, for assignment.
+
+## Spacing
+
+- Always put a space after a comma, never before, just like in regular English.
+
+- Most infix operators (==, +, -, <-, etc.) should always be surrounded by spaces (see the guide for exceptions).
+
+## Long Lines
+
+- Try to limit your code to 80 characters per line (thin vertical line in RStudio Source pane). 
+
+- If a function call is too long to fit on a single line, use one line each for the function name, each argument, and the closing ). This makes the code easier to read and to change later.
+
+- You can omit the argument names for very common arguments (i.e. for arguments that are used in almost every invocation of the function). Short unnamed arguments can also go on the same line as the function name, even if the whole function call spans multiple lines.
+
+- You may also place several arguments on the same line if they are closely related to each other, e.g., strings in calls to paste() or stop(). When building strings, where possible match one line of code to one line of output.
+
+## Character Vectors
+
+- Use ", not ', for quoting text. The main exception is when the text already contains double quotes and no single quotes.
+- [Single quotes may be used for `start_date` and `end_date` in the compile script, because that it the default when copied from the trimdates app.]  {style="color: #15ace4;"}
+
+## Logical Vectors
+
+- Prefer `TRUE` and `FALSE` over `T` and `F`.
+
+## Comments
+
+- Each line of a comment should begin with the comment symbol and a single space.
+
+- Aim to use comments to explain the "why", not the "what" or the "how".
+
+- Comments should be in sentence case, and only end with a period if they contain at least two sentences.
+
+# Pipes
+
+- `%>%` should always have a space before it, and should usually be followed by a new line. After the first step, each line should be indented by two spaces.
+
+- If the arguments to a function don’t all fit on one line, put each argument on its own line and indent.
+
+# ggplot2
+
+## Whitespace
+
+- `+` should always have a space before it, and should be followed by a new line. 
+
+- If the arguments to a ggplot2 layer don’t all fit on one line, put each argument on its own line and indent.
+
+
+
+
+
+
+
 

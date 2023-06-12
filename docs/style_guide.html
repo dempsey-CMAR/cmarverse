@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cmarverse - Style Guide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">cmarverse</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./cmarverse.html">
+ <span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./style_guide.html" aria-current="page">
+ <span class="menu-text">Style Guide</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#naming" id="toc-naming" class="nav-link active" data-scroll-target="#naming">Naming</a>
+  <ul class="collapse">
+  <li><a href="#package-names" id="toc-package-names" class="nav-link" data-scroll-target="#package-names">Package names</a></li>
+  <li><a href="#file-names" id="toc-file-names" class="nav-link" data-scroll-target="#file-names">File names</a></li>
+  <li><a href="#object-names" id="toc-object-names" class="nav-link" data-scroll-target="#object-names">Object names</a></li>
+  </ul></li>
+  <li><a href="#other-syntax" id="toc-other-syntax" class="nav-link" data-scroll-target="#other-syntax">Other Syntax</a>
+  <ul class="collapse">
+  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">Assignment</a></li>
+  <li><a href="#spacing" id="toc-spacing" class="nav-link" data-scroll-target="#spacing">Spacing</a></li>
+  <li><a href="#long-lines" id="toc-long-lines" class="nav-link" data-scroll-target="#long-lines">Long Lines</a></li>
+  <li><a href="#character-vectors" id="toc-character-vectors" class="nav-link" data-scroll-target="#character-vectors">Character Vectors</a></li>
+  <li><a href="#logical-vectors" id="toc-logical-vectors" class="nav-link" data-scroll-target="#logical-vectors">Logical Vectors</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">Comments</a></li>
+  </ul></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes</a></li>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2">ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#whitespace" id="toc-whitespace" class="nav-link" data-scroll-target="#whitespace">Whitespace</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Style Guide</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>cmarverse package developers should strive to meet most guidelines in <a href="https://style.tidyverse.org/">the tidyverse style guide</a> by Hadley Wickham.</p>
+<p>It is not necessary to remember every detail of this guide as you write code. Tools like the <a href="https://github.com/r-lib/styler">styler package</a> (e.g., <code>styler::style_pkg()</code>) can be used periodically to automatically reformat code according to the guidelines.</p>
+<p>However, to help with collaboration, we recommend trying to follow the guide when possible. Key guidelines are listed below (some wording has been modified).</p>
+<p>(Some additions specific to the cmarverse in <span style="color: #15ace4;">blue</span>) (SEe the original guide for examples)</p>
+<section id="naming" class="level1">
+<h1>Naming</h1>
+<section id="package-names" class="level2">
+<h2 class="anchored" data-anchor-id="package-names">Package names</h2>
+<p>This sub-section was modified from <a href="https://r-pkgs.org/workflow101.html#name-your-package">R Packages (2e)</a> by Hadley Wickham.</p>
+<p>Formal requirements for package names:</p>
+<ul>
+<li>Can only consist of letters, numbers, and periods.</li>
+<li>Must start with a letter.</li>
+<li>Cannot end with a period.</li>
+</ul>
+<p>Note that hyphens and underscores are not permitted, and periods are not recommended.</p>
+<p>Best practices:</p>
+<ul>
+<li>Don’t pick a name that is already on CRAN or Bioconductor.</li>
+<li>Avoid using both upper and lower case letters.</li>
+<li>Use a name that is easy to pronounce.</li>
+<li>Use a name that is easy to type<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
+</ul>
+<p>The <a href="https://cran.r-project.org/web/packages/available/index.html">available</a> package helps to evaulate potential names.</p>
+</section>
+<section id="file-names" class="level2">
+<h2 class="anchored" data-anchor-id="file-names">File names</h2>
+<ul>
+<li><p>Files names should be all lower case.</p></li>
+<li><p>If there is only one function in the file, the file should have the same name as the function.</p></li>
+<li><p>If there are multiple functions in the file, give it a concise, meaningful name.</p></li>
+<li><p><span style="color: #15ace4;">Words should be separated by an underscore (no spaces).</span></p></li>
+</ul>
+</section>
+<section id="object-names" class="level2">
+<h2 class="anchored" data-anchor-id="object-names">Object names</h2>
+<ul>
+<li><p>Variable and function names should only use lowercase letters, numbers, and underscores.</p></li>
+<li><p>Use an underscore (_) to separate words (this is called snake case).</p></li>
+<li><p>Variable names should be nouns and function names should be verbs.</p></li>
+<li><p><span style="color: #15ace4;">Function names should have a prefix indicating the package they belong to, e.g., <code>adcp_export_deployment_info</code> is from the adcp package, and <code>ss_download_data</code> is from the sensorstrings package.</span></p></li>
+</ul>
+</section>
+</section>
+<section id="other-syntax" class="level1">
+<h1>Other Syntax</h1>
+<section id="assignment" class="level2">
+<h2 class="anchored" data-anchor-id="assignment">Assignment</h2>
+<ul>
+<li>Use <code>&lt;-</code>, not <code>=</code>, for assignment.</li>
+</ul>
+</section>
+<section id="spacing" class="level2">
+<h2 class="anchored" data-anchor-id="spacing">Spacing</h2>
+<ul>
+<li><p>Always put a space after a comma, never before, just like in regular English.</p></li>
+<li><p>Most infix operators (==, +, -, &lt;-, etc.) should always be surrounded by spaces (see the guide for exceptions).</p></li>
+</ul>
+</section>
+<section id="long-lines" class="level2">
+<h2 class="anchored" data-anchor-id="long-lines">Long Lines</h2>
+<ul>
+<li><p>Try to limit your code to 80 characters per line (thin vertical line in RStudio Source pane).</p></li>
+<li><p>If a function call is too long to fit on a single line, use one line each for the function name, each argument, and the closing ). This makes the code easier to read and to change later.</p></li>
+<li><p>You can omit the argument names for very common arguments (i.e.&nbsp;for arguments that are used in almost every invocation of the function). Short unnamed arguments can also go on the same line as the function name, even if the whole function call spans multiple lines.</p></li>
+<li><p>You may also place several arguments on the same line if they are closely related to each other, e.g., strings in calls to paste() or stop(). When building strings, where possible match one line of code to one line of output.</p></li>
+</ul>
+</section>
+<section id="character-vectors" class="level2">
+<h2 class="anchored" data-anchor-id="character-vectors">Character Vectors</h2>
+<ul>
+<li>Use “, not ’, for quoting text. The main exception is when the text already contains double quotes and no single quotes.</li>
+<li>[Single quotes may be used for <code>start_date</code> and <code>end_date</code> in the compile script, because that it the default when copied from the trimdates app.] {style=“color: #15ace4;”}</li>
+</ul>
+</section>
+<section id="logical-vectors" class="level2">
+<h2 class="anchored" data-anchor-id="logical-vectors">Logical Vectors</h2>
+<ul>
+<li>Prefer <code>TRUE</code> and <code>FALSE</code> over <code>T</code> and <code>F</code>.</li>
+</ul>
+</section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<ul>
+<li><p>Each line of a comment should begin with the comment symbol and a single space.</p></li>
+<li><p>Aim to use comments to explain the “why”, not the “what” or the “how”.</p></li>
+<li><p>Comments should be in sentence case, and only end with a period if they contain at least two sentences.</p></li>
+</ul>
+</section>
+</section>
+<section id="pipes" class="level1">
+<h1>Pipes</h1>
+<ul>
+<li><p><code>%&gt;%</code> should always have a space before it, and should usually be followed by a new line. After the first step, each line should be indented by two spaces.</p></li>
+<li><p>If the arguments to a function don’t all fit on one line, put each argument on its own line and indent.</p></li>
+</ul>
+</section>
+<section id="ggplot2" class="level1">
+<h1>ggplot2</h1>
+<section id="whitespace" class="level2">
+<h2 class="anchored" data-anchor-id="whitespace">Whitespace</h2>
+<ul>
+<li><p><code>+</code> should always have a space before it, and should be followed by a new line.</p></li>
+<li><p>If the arguments to a ggplot2 layer don’t all fit on one line, put each argument on its own line and indent.</p></li>
+</ul>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>https://yihui.org/en/2017/12/typing-names/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
